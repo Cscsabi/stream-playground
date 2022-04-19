@@ -89,7 +89,7 @@ public class LegoSetRepository extends Repository<LegoSet> {
      */
     public void printAllSortedDistinctTagsThatHaveNoSubtheme() {
         getAll().stream()
-                .filter(brickset -> brickset.getSubtheme() != null && brickset.getTags() != null)
+                .filter(brickset -> brickset.getSubtheme() == null && brickset.getTags() != null)
                 .flatMap(brickset ->  brickset.getTags().stream())
                 .distinct()
                 .sorted()
